@@ -33,28 +33,28 @@ int main(int argc, const char * argv[]) {
     }
     file.close();
     
-    int aP = 1;
-    for (int i = 0; i<p; i++) {
+    long long int aP = a;
+    for (int i = 1; i<p; i++) {
         aP *= a;
     }
     
-    int aP1 = 1;
-    for (int i = 0; i<p-1; i++) {
+    long long int aP1 = a;
+    for (int i = 1; i<p-1; i++) {
         aP1 *= a;
     }
     
     // use Fermat's little theorem
     if (gcd(a, p) == 1) {
-        if (aP % p == a) {
-            cout<<p<<" ir pirmskaitlis(1)"<<endl;
-        } else {
-            cout<<p<<" nav pirmskaitlis(1)"<<endl;
-        }
-    } else {
         if (aP1 % p == 1) {
             cout<<p<<" ir pirmskaitlis(2)"<<endl;
         } else {
             cout<<p<<" nav pirmskaitlis(2)"<<endl;
+        }
+    } else {
+        if (aP % p == a) {
+            cout<<p<<" ir pirmskaitlis(1)"<<endl;
+        } else {
+            cout<<p<<" nav pirmskaitlis(1)"<<endl;
         }
     }
     return 0;
