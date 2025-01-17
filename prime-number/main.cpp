@@ -24,7 +24,7 @@ int main(int argc, const char * argv[]) {
     
     ifstream file("ieeja.txt");
     int p = 1;
-    int a = 10;
+    int a = 2;
     
     if(file.is_open()) {
         string rinda;
@@ -41,6 +41,10 @@ int main(int argc, const char * argv[]) {
     long long int aP1 = a;
     for (int i = 1; i<p-1; i++) {
         aP1 *= a;
+    }
+    
+    if (gcd(a, p) != 1) {
+        a = 3;
     }
     
     // use Fermat's little theorem
